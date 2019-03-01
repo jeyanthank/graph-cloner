@@ -23,15 +23,18 @@ public class Cloner {
         Graph.intialize(args[0]);
 
         // Clone
-        Optional<GraphModel> outputGraph = Graph.getInstance().findAndClone(Integer.parseInt(args[1]));
+        try {
+            Optional<GraphModel> outputGraph = Graph.getInstance().findAndClone(Integer.parseInt(args[1]));
 
-        // Write to the output file
-        if(outputGraph.isPresent()) {
-            Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            String outputJson = gson.toJson(outputGraph.get(), GraphModel.class);
-            Files.write(Paths.get("output.txt"), outputJson.getBytes());
+            // Write to the output file
+            if (outputGraph.isPresent()) {
+                Gson gson = new GsonBuilder().setPrettyPrinting().create();
+                String outputJson = gson.toJson(outputGraph.get(), GraphModel.class);
+                Files.write(Paths.get("output.txt"), outputJson.getBytes());
+            }
+        } catch (NumberFormatException e){
+            System.out.println(" Invalid number ");
         }
-
         //System.out.println(outputJson);
 
     }
