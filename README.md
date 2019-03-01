@@ -7,7 +7,7 @@
 
 > Steps to follow to build and run 
 ```
-Clone the repo and the change directory
+Clone the repo and cd into the project
   cd graph-cloner
   
 Compile and Test
