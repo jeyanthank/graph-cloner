@@ -7,6 +7,9 @@
 
 > Steps to follow to build and run 
 ```
+Clone the repo and the change directory
+  cd graph-cloner
+  
 Compile and Test
   gradle clean test
 
@@ -16,6 +19,6 @@ Build Jar
 
 Run App
   copy input file to current directory (when you clone you would get a sample input file I used)
-  java -jar Cloner-1.0.jar input.txt 5
+  java -jar graph-cloner-1.0.jar input.txt 5
 
 ```
